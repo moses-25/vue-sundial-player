@@ -30,4 +30,80 @@ export default function usePlayer() {
         const s = Math.floor(seconds % 60).toString().padStart(2, "0");
         return `${m}:${s}`;
     }
+    function startTicking() {
+        stopTicking ();
+        tickInterval = setInterval(() =>{
+            if (!currentTrack.value) return;
+            if (progress.value < currentTrack.value.duration){
+                progress.value += 1;
+            } else {
+                next();
+            }
+        }, 1000);
+    }
+
+    function stopTicking() {
+        if (tickInterval) clearinterval(tickInterval);
+        tickInterval = null;
+    }
+
+    function play(index = null) {
+        if (index !== null) {
+            currentindex.value = index;
+            progress.value = 0;
+        }
+        isplaying.value = true;
+        startTicking();
+    }
+
+    function pause() {
+        isplaying.value = false;
+        stopTicking();
+    }
+    {
+        function togggle() {
+            isplaying.value ? pause() : play();
+        }
+
+        function next(){
+            currentindex.value = (currentindex.value + 1) % queue.value.length;
+            progress.value = 0;
+            if (isplaying.value) startTicking();
+        }
+
+        function prev(){
+            currentindex.value = 
+            (currentindex.value - 1 + queue.value.length) % queue.value.length;
+            progress.value = 0;
+            if (isplaying.value) startTicking();
+        }
+
+        function seekTo(percent) {
+            if (!currentTrack.value) return;
+            progress.value = Math.round((percent / 100) * currentTrack.value.duration);
+        }
+
+        function setVolume(v) {
+            volume.value = v;
+        }
+
+        return {
+            queue,
+            currentindex,
+            isplaying,
+            progress,
+            volume,
+            currentTrack,
+            progresspercent,
+            formattedprogress,
+            formattedDuration,
+            play,
+            pause,
+            togggle,
+            next,
+            prev,
+            seekTo,
+            setVolume,
+            formatTime
+        }
 }
