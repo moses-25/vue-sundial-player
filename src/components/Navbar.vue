@@ -1,12 +1,12 @@
 <script setup>
-import "../styles/components/navbar.css";
+import "../styles/components/Navbar.css";
 import { useRoute } from 'vue-router';
 
 const route = useRoute();
 </script>
 
 <template>
-    <header class="Navbar">
+    <header class="navbar">
         <div class="brand">
             <span class="brand-mark">*</span>
             <h1 class="brand-name">Sundial</h1>
