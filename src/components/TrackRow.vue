@@ -11,7 +11,11 @@ import Vinyl from "./Vinyl.vue";
 const props = defineProps({
   track: {
     type: Object,
-    index: Number
+    required: true
+  },
+  index: {
+    type: Number,
+    required: true
   }
 });
 
@@ -34,7 +38,7 @@ function handlePlayPause() {
         <button
         class="track-row"
         :class="{ current: isCurrent }"
-        @click="handleClick"
+        @click="handlePlayPause"
     >
         <Vinyl :color="track.color" :is-playing="isActivePlaying" :size="44" />
         <div class="track-info">
