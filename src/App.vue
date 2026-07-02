@@ -1,7 +1,19 @@
 <script setup>
-import HelloWorld from './components/HelloWorld.vue'
+// import the application components
+import Navbar from "./components/Navbar.vue";
+// import the track player logic module
+import usePlayer from "./composables/usePlayer.js";
+// import the global CSS styles
+import "./styles/global.css";
+// import the App CSS styles
+import "./styles/App.css";
 </script>
 
 <template>
-  <HelloWorld />
+  <div class="app-shell">
+    <Navbar />
+    <main class="app-main">
+      <RouterView />
+    </main>
+  </div>
 </template>
