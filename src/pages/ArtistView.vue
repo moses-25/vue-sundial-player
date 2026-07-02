@@ -32,7 +32,7 @@ const artists = computed(() => {
                     {{ artist.name.charAt(0) }}
                 </div>
                 <h3 class="artist-name">{{ artist.name }}</h3>
-                <p class="artist-track-count">{{ artist.tracks.length }} tracks</p>
+                <p class="artist-count">{{ artist.tracks.length }} tracks</p>
                 <ul class="artist-tracks">
                     <li v-for="t in artist.tracks" :key="t.id" @click="play(t.index)">
                         {{ t.title }}

@@ -4,7 +4,7 @@ defineProps({
     color: {
         type: String,
         default: "#C97B4A"},  
-        isplaying: Boolean,
+        isPlaying: Boolean,
         size: {
             type: Number,
             default: 64
@@ -13,7 +13,7 @@ defineProps({
 </script>
 
 <template>
-     <div class="vinyl-ring" :style="{ width: size + 'px', height: size + 'px' }">
+     <div class="vinyl-rig" :style="{ width: size + 'px', height: size + 'px' }">
         <div
             class="vinyl-disc"
             :class="{ spinning: isPlaying }"
