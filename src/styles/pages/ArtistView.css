@@ -1,0 +1,102 @@
+.artists {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 24px 48px 0;
+}
+
+.artists-hero {
+    margin-bottom: 28px;
+}
+
+.eyebrow {
+    font-size: 0.82rem;
+    opacity: 0.55;
+    margin: 0 0 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.hero-title {
+    font-size: 2.4rem;
+    font-weight: 600;
+    letter-spacing: -0.02em;
+}
+
+.artist-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.artist-card {
+    background: var(--card);
+    border-radius: 20px;
+    padding: 22px;
+    transition: transform 0.2s ease;
+}
+
+.artist-card:hover {
+    transform: translateY(-4px);
+}
+
+.artist-avatar {
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.3rem;
+    margin-bottom: 14px;
+}
+
+.artist-name {
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 2px;
+}
+
+.artist-count {
+    font-size: 0.8rem;
+    opacity: 0.55;
+    margin: 0 0 14px;
+}
+
+.artist-tracks {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    border-top: 1px solid var(--line);
+    padding-top: 10px;
+}
+
+.artist-tracks li {
+    font-size: 0.86rem;
+    padding: 6px 0;
+    opacity: 0.75;
+    cursor: pointer;
+    transition: opacity 0.15s, color 0.15s;
+}
+
+.artist-tracks li:hover {
+    opacity: 1;
+    color: var(--terracotta);
+}
+
+@media (max-width: 640px) {
+    .artists {
+        padding: 16px 16px 0;
+    }
+
+    .hero-title {
+        font-size: 1.8rem;
+    }
+
+    .artist-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 12px;
+    }
+}
