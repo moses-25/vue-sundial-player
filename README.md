@@ -71,7 +71,7 @@ automatically no prop drilling, no global store needed.
 
 ```bash
 # Clone the repository
-git clone https://github.com/moses-25/vue-sundial-player.git
+git clone https://github.com/moses25/vue-sundial-player.git
 
 # Navigate into the project
 cd vue-sundial-player
